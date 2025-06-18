@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mobile Recommender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>Mobile Recommender</h1>
+  <p class="tagline">Find the perfect phone tailored to your needs and budget.</p>
+  <h2>Enter Your Preferences</h2>
+
+  <form action="/predict" method="post">
+    
+    Company (optional): 
+    <select name="company">
+      <option value="">Select Company</option>
+      {% for company in companies %}
+        <option value="{{ company }}">{{ company }}</option>
+      {% endfor %}
+    </select><br>
+
+    Budget (INR): 
+    <input name="price" placeholder="Enter Budget" type="number"  required><br>
+
+    RAM:
+    <select name="ram" required>
+      <option value="">Select RAM</option>
+      {% for r in rams %}
+        <option value="{{ r }}">{{ r }} GB</option>
+      {% endfor %}
+    </select><br>
+
+    Storage:
+    <select name="storage" required>
+      <option value="">Select Storage</option>
+      {% for s in storages %}
+        <option value="{{ s }}">{{ s }} GB</option>
+      {% endfor %}
+    </select><br>
+
+    Battery (mAh): 
+    <input type="number" placeholder="Enter Battery Capacity" name="battery" required><br>
+
+    Rear Camera:
+    <select name="back_cam" required>
+      <option value="">Select Rear Camera</option>
+      {% for r in rear_cams %}
+        <option value="{{ r }}">{{ r }} MP</option>
+      {% endfor %}
+    </select><br>
+
+    Front Camera:
+    <select name="front_cam" required>
+      <option value="">Select Front Camera</option>
+      {% for f in front_cams %}
+        <option value="{{ f }}">{{ f }} MP</option>
+      {% endfor %}
+    </select><br><br>
+
+    <input type="submit" value="Find Phones">
+  </form>
+</body>
+</html>

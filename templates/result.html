@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Recommendations</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="result-container">
+    <h2>Recommended Phones</h2>
+
+    {% if recommended %}
+      <div class="cards">
+        {% for phone in recommended %}
+          <div class="card">
+            <h3>{{ phone["Company Name"] }} - {{ phone["Model Name"] }}</h3>
+            <ul>
+              <li><strong>Price:</strong> ₹{{ phone["Launched Price (INR)"] }}</li>
+              <li><strong>RAM:</strong> {{ phone["RAM_GB"] }} GB</li>
+              <li><strong>Storage:</strong> {{ phone["Storage_GB"] }} GB</li>
+              <li><strong>Battery:</strong> {{ phone["Battery Capacity(mAh)"] }} mAh</li>
+              <li><strong>Rear Camera:</strong> {{ phone["Back Cam Primary (MP)"] }} MP</li>
+              <li><strong>Front Camera:</strong> {{ phone["Front Cam Primary (MP)"] }} MP</li>
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="no-results">
+        Sorry! No phones found{% if selected_company %} from <strong>{{ selected_company }}</strong>{% endif %} matching your preferences.
+      </p>
+
+      <h3>📱 Here are some similar phones from other brands:</h3>
+      <div class="cards">
+        {% for phone in fallback %}
+          <div class="card">
+            <h3>{{ phone["Company Name"] }} - {{ phone["Model Name"] }}</h3>
+            <ul>
+              <li><strong>Price:</strong> ₹{{ phone["Launched Price (INR)"] }}</li>
+              <li><strong>RAM:</strong> {{ phone["RAM_GB"] }} GB</li>
+              <li><strong>Storage:</strong> {{ phone["Storage_GB"] }} GB</li>
+              <li><strong>Battery:</strong> {{ phone["Battery Capacity(mAh)"] }} mAh</li>
+              <li><strong>Rear Camera:</strong> {{ phone["Back Cam Primary (MP)"] }} MP</li>
+              <li><strong>Front Camera:</strong> {{ phone["Front Cam Primary (MP)"] }} MP</li>
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <br>
+<a href="/" class="back-button">🔙 Back to Home</a>
+
+  </div>
+</body>
+</html>
