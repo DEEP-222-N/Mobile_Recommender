@@ -81,6 +81,7 @@ The dashboard analyzes smartphone trends across:
 ```python app.py```
 
 📁 mobile-recommender/
+
 ├── 📄 app.py               # Flask backend logic
 
 ├── 📄 model.pkl            # Serialized KNN recommendation model
