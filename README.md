@@ -80,15 +80,26 @@ The dashboard analyzes smartphone trends across:
 
 ```python app.py```
 
-mobile-recommender/
-├── app.py                # Flask backend
-├── model.pkl             # Saved KNN model
-├── scaler.pkl            # Scaler object
-├── dataset.pkl           # Processed dataset
-├── templates/
-│   └── index.html        # Main UI page
-├── static/
-│   └── style.css         # Styling
-├── PowerBI/
-│   └── dashboard.pbix    # BI analysis (optional)
-└── README.md             # Project documentation
+📁 mobile-recommender/
+├── 📄 app.py               # Flask backend logic
+
+├── 📄 model.pkl            # Serialized KNN recommendation model
+
+├── 📄 scaler.pkl           # Saved scaler for input preprocessing
+
+├── 📄 dataset.pkl          # Preprocessed mobile dataset
+
+├── 📁 templates/           # HTML templates for Flask
+
+│   └── 📄 index.html       # Main web UI form
+
+├── 📁 static/              # Static assets (CSS, images)
+
+│   └── 📄 style.css        # Styling for the web interface
+
+├── 📁 PowerBI/             # Business Intelligence & Visualization
+
+│   └── 📄 dashboard.pbix   # Interactive Power BI dashboard
+
+└── 📄 README.md            # Project documentation (you're here!)
+
