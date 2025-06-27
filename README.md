@@ -1,78 +1,92 @@
-# Mobile Recommendation System
+# 📱 Mobile Recommendation System
 
-Live Demo
+**Live Demo:** [Click to try it out](https://mobile-recommender-jmwz.onrender.com/)  
+**Power BI Dashboard:** [View Analysis](https://app.powerbi.com/view?r=eyJrIjoiMWRkYTA3ZWMtMTNhYy00ODM1LTk1NDYtYmQxOWE3MmRmYjhhIiwidCI6ImQxZjE0MzQ4LWYxYjUtNGEwOS1hYzk5LTdlYmYyMTNjYmM4MSIsImMiOjEwfQ%3D%3D)
 
-https://mobile-recommender-jmwz.onrender.com/
+---
 
-Power BI Link:
+## 📌 Overview
 
-https://app.powerbi.com/view?r=eyJrIjoiMWRkYTA3ZWMtMTNhYy00ODM1LTk1NDYtYmQxOWE3MmRmYjhhIiwidCI6ImQxZjE0MzQ4LWYxYjUtNGEwOS1hYzk5LTdlYmYyMTNjYmM4MSIsImMiOjEwfQ%3D%3D
+The **Mobile Recommendation System** is a web-based application that recommends smartphones based on user preferences like **budget**, **RAM**, **storage**, and **battery capacity**. It uses a **K-Nearest Neighbors (KNN)** algorithm for content-based filtering and is powered by a clean Flask backend and a responsive frontend built using HTML and CSS.
+
+Additionally, the project includes a **Power BI dashboard** to explore pricing and specification trends in the mobile market using a separate analysis pipeline.
+
+---
+
+## 🧠 How It Works
+
+1. User enters mobile preferences through a web form.
+2. Inputs are scaled using the same transformation as the training data.
+3. A KNN model compares the input to a dataset of mobile specifications.
+4. Top matching phones are shown with relevant details.
+
+---
+
+## 🛠️ Tech Stack
+
+### ⚙️ Backend & Model
+- **Python**
+- **Pandas**, **NumPy** – Data preprocessing
+- **Scikit-learn** – KNN model implementation
+- **Pickle** – Model and scaler serialization
+- **Flask** – Web server for serving recommendations
+
+### 🌐 Frontend
+- **HTML**, **CSS** – Simple and clean responsive UI
+
+### 📊 Data Analytics (Power BI)
+- **Google Colab** (Pandas) – Data cleaning and preparation
+- **Power BI**, **DAX** – Dashboard creation and analysis
+- **Power Query** – Data shaping
+
+---
+
+## 📈 Power BI Insights
+
+The dashboard analyzes smartphone trends across:
+
+- 📊 **Brand-wise distribution** and market positioning  
+- 💰 **Price vs. hardware** correlations (RAM, Storage, Battery, Camera)  
+- 🔋 **Battery-to-price ratio** using custom DAX  
+- 🌍 **International vs Domestic pricing**  
+- 🏆 **Top value phones** based on custom efficiency scoring
+
+---
+
+## 🔑 Key Features
+
+- ✅ User-driven input (budget, RAM, storage, battery)
+- 🔍 Content-based recommendation with KNN
+- 📱 Tailored phone suggestions
+- 🎨 Lightweight, responsive UI
+- 📊 Detailed data analysis dashboard in Power BI
+
+---
+
+## 🚀 Getting Started Locally
+
+### 1. Clone the Repository
+
+```git clone https://github.com/yourusername/mobile-recommender.git```
+```cd mobile-recommender```
+
+###2. Install Requirements
+```pip install -r requirements.txt```
 
 
-Mobile Recommendation System
-The Mobile Recommendation System is a personalized web application that helps users find smartphones that best match their preferences. Built using Flask for the backend and a clean, responsive frontend with HTML and CSS, this project uses a K-Nearest Neighbors (KNN) model to recommend phones based on specifications such as budget, RAM, storage, and battery capacity.
+3. Run the Flask App
 
-**Key Features**
-User-Driven Input
-Users can enter specific preferences like budget, RAM size, internal storage, and battery capacity. The app processes these inputs and suggests smartphones that are most aligned with the user’s needs.
+```python app.py```
 
-**KNN-Based Recommender System**
-At the core of the application is a content-based filtering approach using the K-Nearest Neighbors algorithm. It identifies the most similar phones from a dataset by comparing user input with existing phone features using distance metrics. The goal is to return relevant and practical options rather than generic suggestions.
-
-Clean Web Interface
-The app is lightweight and intuitive, offering a simple form-based input system and displaying results in an organized, user-friendly manner. The UI is designed to ensure a smooth and distraction-free experience.
-
-Preprocessed and Scaled Dataset
-The recommendation engine is trained on a structured dataset of mobile phone specifications. All features were preprocessed and scaled to ensure accurate distance calculations by the KNN model.
-
-**Technology Stack**
-Python – for model development and backend logic
-
-Pandas, NumPy – for data handling and preprocessing
-
-Scikit-learn – for building and applying the KNN recommender
-
-Flask – to serve the model through a web application
-
-HTML, CSS – for the frontend design and layout
-
-Pickle – for saving the model, scaler, and dataset objects
-
-How It Works
-The user accesses the homepage and fills in desired phone specifications.
-
-# Mobile Data Analysis
-
-This project focuses on analyzing smartphone specifications and pricing trends to uncover brand-wise insights and evaluate the value offered by different devices. The analysis is visualized through an interactive Power BI dashboard, with the data cleaned and prepared using Python on Google Colab.
-
-The dataset, containing various mobile phone specifications such as price, RAM, storage, battery, and camera, was first cleaned and preprocessed using Pandas in Google Colab. After transforming and exporting the data, a detailed dashboard was created in Power BI to explore insights across multiple dimensions including brand performance, feature distribution, and value comparisons.
-
-Key highlights:
-
-Brand-wise distribution of phones to understand positioning across price and spec ranges
-
-Pricing trends with hardware correlations like RAM, storage, battery, and camera
-
-RAM and storage segmentation to track how mid-range and flagship phones differ
-
-Battery-to-price ratio visualized using a custom DAX measure
-
-International vs. domestic price comparison for regional pricing analysis
-
-Custom DAX calculations to rank devices by feature-to-price efficiency
-
-Tools and workflow:
-
-Google Colab (Python, Pandas) for data cleaning and transformation
-
-Power BI for visualization and dashboard building
-
-DAX for custom metrics and calculated fields
-
-Power Query for data loading and shaping
-
-The input is scaled using the same transformation applied to the training data.
-
-The KNN model finds the closest matches from the dataset based on similarity.
-
-The top recommended phones are presented with details for each.
+mobile-recommender/
+├── app.py                # Flask backend
+├── model.pkl             # Saved KNN model
+├── scaler.pkl            # Scaler object
+├── dataset.pkl           # Processed dataset
+├── templates/
+│   └── index.html        # Main UI page
+├── static/
+│   └── style.css         # Styling
+├── PowerBI/
+│   └── dashboard.pbix    # BI analysis (optional)
+└── README.md             # Project documentation
