@@ -67,7 +67,7 @@ The dashboard analyzes smartphone trends across:
 
 ### 1. Clone the Repository
 
-```git clone https://github.com/yourusername/mobile-recommender.git```
+```git clone https://github.com/DEEP-222-N/mobile_recommender.git```
 
 ```cd mobile-recommender```
 
