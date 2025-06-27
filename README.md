@@ -79,28 +79,3 @@ The dashboard analyzes smartphone trends across:
 ### 3. Run the Flask App
 
 ```python app.py```
-
-📁 mobile-recommender/
-
-├── 📄 app.py               # Flask backend logic
-
-├── 📄 model.pkl            # Serialized KNN recommendation model
-
-├── 📄 scaler.pkl           # Saved scaler for input preprocessing
-
-├── 📄 dataset.pkl          # Preprocessed mobile dataset
-
-├── 📁 templates/           # HTML templates for Flask
-
-│   └── 📄 index.html       # Main web UI form
-
-├── 📁 static/              # Static assets (CSS, images)
-
-│   └── 📄 style.css        # Styling for the web interface
-
-├── 📁 PowerBI/             # Business Intelligence & Visualization
-
-│   └── 📄 dashboard.pbix   # Interactive Power BI dashboard
-
-└── 📄 README.md            # Project documentation (you're here!)
-
