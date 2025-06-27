@@ -41,6 +41,8 @@ Pickle – for saving the model, scaler, and dataset objects
 How It Works
 The user accesses the homepage and fills in desired phone specifications.
 
+# Mobile Data Analysis
+
 This project focuses on analyzing smartphone specifications and pricing trends to uncover brand-wise insights and evaluate the value offered by different devices. The analysis is visualized through an interactive Power BI dashboard, with the data cleaned and prepared using Python on Google Colab.
 
 The dataset, containing various mobile phone specifications such as price, RAM, storage, battery, and camera, was first cleaned and preprocessed using Pandas in Google Colab. After transforming and exporting the data, a detailed dashboard was created in Power BI to explore insights across multiple dimensions including brand performance, feature distribution, and value comparisons.
